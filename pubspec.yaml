@@ -1,10 +1,10 @@
 name: ccavenue_unofficial
-description: A new Flutter plugin project.
-version: 0.0.1
-homepage:
-
+description: Unofficial CC Avenue flutter package to accept payment on Android and iOS.
+version: 0.0.2
+repository: "https://github.com/orangepreneur/ccavenue_unofficial"
+homepage: "https://github.com/orangepreneur/ccavenue_unofficial"
 environment:
-  sdk: '>=3.0.0 <4.0.0'
+  sdk: ">=3.0.0 <4.0.0"
   flutter: ">=3.3.0"
 
 dependencies:
@@ -16,7 +16,6 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
-
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 

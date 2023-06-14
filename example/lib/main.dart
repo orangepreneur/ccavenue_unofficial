@@ -23,6 +23,18 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
     initPlatformState();
+    getStringFromPlugin();
+  }
+
+  Future<void> getStringFromPlugin() async {
+    String newString;
+
+    try {
+      newString = await _ccavenueUnofficialPlugin.initiate() ?? "Not Found";
+      print(newString);
+    } catch (err) {
+      print(err);
+    }
   }
 
   // Platform messages are asynchronous, so we initialize in an async method.
@@ -31,8 +43,8 @@ class _MyAppState extends State<MyApp> {
     // Platform messages may fail, so we use a try/catch PlatformException.
     // We also handle the message potentially returning null.
     try {
-      platformVersion =
-          await _ccavenueUnofficialPlugin.getPlatformVersion() ?? 'Unknown platform version';
+      platformVersion = await _ccavenueUnofficialPlugin.getPlatformVersion() ??
+          'Unknown platform version';
     } on PlatformException {
       platformVersion = 'Failed to get platform version.';
     }

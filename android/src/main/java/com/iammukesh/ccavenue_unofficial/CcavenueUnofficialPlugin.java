@@ -26,7 +26,10 @@ public class CcavenueUnofficialPlugin implements FlutterPlugin, MethodCallHandle
   public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
     if (call.method.equals("getPlatformVersion")) {
       result.success("Android " + android.os.Build.VERSION.RELEASE);
-    } else {
+    }else if(call.method.equals("CC_Avenue_Unofficial")){
+      result.success("Mukesh Joshi");
+    }
+     else {
       result.notImplemented();
     }
   }

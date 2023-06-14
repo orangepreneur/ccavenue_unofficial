@@ -11,7 +11,15 @@ class MethodChannelCcavenueUnofficial extends CcavenueUnofficialPlatform {
 
   @override
   Future<String?> getPlatformVersion() async {
-    final version = await methodChannel.invokeMethod<String>('getPlatformVersion');
+    final version =
+        await methodChannel.invokeMethod<String>('getPlatformVersion');
     return version;
+  }
+
+  @override
+  Future<String?> initiate() async {
+    final text =
+        await methodChannel.invokeMethod<String>('CC_Avenue_Unofficial');
+    return text;
   }
 }

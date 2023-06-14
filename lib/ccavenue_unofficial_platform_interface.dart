@@ -8,7 +8,8 @@ abstract class CcavenueUnofficialPlatform extends PlatformInterface {
 
   static final Object _token = Object();
 
-  static CcavenueUnofficialPlatform _instance = MethodChannelCcavenueUnofficial();
+  static CcavenueUnofficialPlatform _instance =
+      MethodChannelCcavenueUnofficial();
 
   /// The default instance of [CcavenueUnofficialPlatform] to use.
   ///
@@ -25,5 +26,9 @@ abstract class CcavenueUnofficialPlatform extends PlatformInterface {
 
   Future<String?> getPlatformVersion() {
     throw UnimplementedError('platformVersion() has not been implemented.');
+  }
+
+  Future<String?> initiate() {
+    throw UnimplementedError("initiate() has not been implemented");
   }
 }

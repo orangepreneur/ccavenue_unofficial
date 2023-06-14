@@ -7,13 +7,15 @@ import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 class MockCcavenueUnofficialPlatform
     with MockPlatformInterfaceMixin
     implements CcavenueUnofficialPlatform {
-
   @override
   Future<String?> getPlatformVersion() => Future.value('42');
+  @override
+  Future<String?> initiate() => Future.value('Mukesh Joshi');
 }
 
 void main() {
-  final CcavenueUnofficialPlatform initialPlatform = CcavenueUnofficialPlatform.instance;
+  final CcavenueUnofficialPlatform initialPlatform =
+      CcavenueUnofficialPlatform.instance;
 
   test('$MethodChannelCcavenueUnofficial is the default instance', () {
     expect(initialPlatform, isInstanceOf<MethodChannelCcavenueUnofficial>());
@@ -21,9 +23,18 @@ void main() {
 
   test('getPlatformVersion', () async {
     CcavenueUnofficial ccavenueUnofficialPlugin = CcavenueUnofficial();
-    MockCcavenueUnofficialPlatform fakePlatform = MockCcavenueUnofficialPlatform();
+    MockCcavenueUnofficialPlatform fakePlatform =
+        MockCcavenueUnofficialPlatform();
     CcavenueUnofficialPlatform.instance = fakePlatform;
 
     expect(await ccavenueUnofficialPlugin.getPlatformVersion(), '42');
+  });
+  test('CC_Avenue_Unofficial', () async {
+    CcavenueUnofficial ccavenueUnofficialPlugin = CcavenueUnofficial();
+    MockCcavenueUnofficialPlatform fakePlatform =
+        MockCcavenueUnofficialPlatform();
+    CcavenueUnofficialPlatform.instance = fakePlatform;
+
+    expect(await ccavenueUnofficialPlugin.initiate(), 'Mukesh Joshi');
   });
 }
