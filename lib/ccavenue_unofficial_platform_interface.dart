@@ -24,11 +24,7 @@ abstract class CcavenueUnofficialPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  Future<String?> getPlatformVersion() {
-    throw UnimplementedError('platformVersion() has not been implemented.');
-  }
-
-  Future<String?> initiate() {
-    throw UnimplementedError("initiate() has not been implemented");
+  Future<String?> initiatePayment() {
+    throw UnimplementedError("initiatePayment() has not been implemented");
   }
 }

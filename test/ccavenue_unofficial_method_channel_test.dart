@@ -5,11 +5,11 @@ import 'package:ccavenue_unofficial/ccavenue_unofficial_method_channel.dart';
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  MethodChannelCcavenueUnofficial platform = MethodChannelCcavenueUnofficial();
   const MethodChannel channel = MethodChannel('ccavenue_unofficial');
 
   setUp(() {
-    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger.setMockMethodCallHandler(
+    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+        .setMockMethodCallHandler(
       channel,
       (MethodCall methodCall) async {
         return '42';
@@ -18,10 +18,7 @@ void main() {
   });
 
   tearDown(() {
-    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger.setMockMethodCallHandler(channel, null);
-  });
-
-  test('getPlatformVersion', () async {
-    expect(await platform.getPlatformVersion(), '42');
+    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+        .setMockMethodCallHandler(channel, null);
   });
 }

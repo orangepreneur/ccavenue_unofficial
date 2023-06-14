@@ -8,9 +8,7 @@ class MockCcavenueUnofficialPlatform
     with MockPlatformInterfaceMixin
     implements CcavenueUnofficialPlatform {
   @override
-  Future<String?> getPlatformVersion() => Future.value('42');
-  @override
-  Future<String?> initiate() => Future.value('Mukesh Joshi');
+  Future<String?> initiatePayment() => Future.value('Mukesh Joshi');
 }
 
 void main() {
@@ -21,20 +19,12 @@ void main() {
     expect(initialPlatform, isInstanceOf<MethodChannelCcavenueUnofficial>());
   });
 
-  test('getPlatformVersion', () async {
-    CcavenueUnofficial ccavenueUnofficialPlugin = CcavenueUnofficial();
-    MockCcavenueUnofficialPlatform fakePlatform =
-        MockCcavenueUnofficialPlatform();
-    CcavenueUnofficialPlatform.instance = fakePlatform;
-
-    expect(await ccavenueUnofficialPlugin.getPlatformVersion(), '42');
-  });
   test('CC_Avenue_Unofficial', () async {
     CcavenueUnofficial ccavenueUnofficialPlugin = CcavenueUnofficial();
     MockCcavenueUnofficialPlatform fakePlatform =
         MockCcavenueUnofficialPlatform();
     CcavenueUnofficialPlatform.instance = fakePlatform;
 
-    expect(await ccavenueUnofficialPlugin.initiate(), 'Mukesh Joshi');
+    expect(await ccavenueUnofficialPlugin.initiatePayment(), 'Mukesh Joshi');
   });
 }
