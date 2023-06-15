@@ -24,7 +24,16 @@ abstract class CcavenueUnofficialPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  Future<String?> initiatePayment() {
+  Future<String?> initiatePayment(
+      {required String transUrl,
+      required String accessCode,
+      required String merchantId,
+      required String orderId,
+      required String currencyType,
+      required String amount,
+      required String cancelUrl,
+      required String redirectUrl,
+      required String rsaKeyUrl}) {
     throw UnimplementedError("initiatePayment() has not been implemented");
   }
 }

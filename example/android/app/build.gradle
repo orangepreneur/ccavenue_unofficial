@@ -55,6 +55,13 @@ android {
     }
 }
 
+dependencies {
+    implementation 'com.jakewharton:butterknife:6.1.0'
+    implementation 'com.android.volley:volley:1.2.0'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:appcompat-v7:25.3.1'
+}
+
 flutter {
     source '../..'
 }
